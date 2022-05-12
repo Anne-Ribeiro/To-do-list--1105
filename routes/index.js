@@ -1,8 +1,8 @@
 const { app } = require("../config/servidor")
 
 module.exports = (app)=>{
-    //rota do tipo send
+    //rota do tipo render
     app.get('/',(req,res)=>{
-        res.send('Rota do tipo send')
+        res.render('index.ejs')
     })
 }

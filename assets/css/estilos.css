@@ -1,3 +1,20 @@
 input,i{
     margin-bottom: 10px;
 }
+
+.cor{
+    background-color: #638aae;
+    color: white;
+    font-weight: bold;
+}
+
+#fundo{
+   background-color: #cbdef0;
+}
+
+.botao{
+    background-color: #e5eff8;
+    color: #3e576d;
+    border-color: #638aae;
+    font-weight: bold;
+}

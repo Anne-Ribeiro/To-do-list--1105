@@ -18,3 +18,13 @@ input,i{
     border-color: #638aae;
     font-weight: bold;
 }
+
+.txt{
+    background-color: #324d66;
+    color: white;
+    font-weight: bold;
+}
+
+textarea{
+    resize: none;
+}

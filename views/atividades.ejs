@@ -12,17 +12,17 @@
 <body>
     <div class="container">
         <h1 class="text-center">Lista de Atividades</h1>
-        <h2 class="text-center"><%=nome%></h2>
+        <h2 class="text-center">Olá,<%=nome%>!</h2>
         <div class="row">
             <div class="col-sm">
                 <h3 class="text-center">Cadastrar</h3>
                 <form action="/atividades" method="POST" class="form-control" id="fundo">
                     <input type="hidden" name="id" value="<%=id%>">
-                    <label for="" class="form-control bg-secundary cor">Título da Atividade</label>
-                    <input type="text" name="nome" id="" class="form-control" placeholder="Título"> 
-                    <label for="" class="form-control cor">Data de Entrega
-                    </label>
-                    <input type="date" class="data" id="" class="form-control">
+                    <input type="hidden" name="nome" value="<%=nome%>">
+                    <label for="" class="form-control cor">Título da Atividade</label>
+                    <input type="text" name="titulo" id="" class="form-control" placeholder="Título"> 
+                    <label for="" class="form-control cor">Data de Entrega</label>
+                    <input type="date" name="data" id="" class="form-control">
                     <label for="" class="form-control cor">Tipo:</label>
                     <select name="tipo" id="" class="form-control">
                         <option value="0">Selecione...</option>
@@ -31,6 +31,27 @@
                         <option value="rec">REC</option>
                         <option value="exame">Exame</option>
                     </select>
+
+                    <label for="" class="form-control cor">Disciplina:</label>
+                    <select name="disciplina" id="" class="form-control">
+                        <option value="0">Selecione...</option>
+                        <option value="bio">Biologia</option>
+                        <option value="lp2">Linguagem de Programação</option>
+                        <option value="bd2">Banco de Dados </option>
+                        <option value="inw">Internet Web</option>
+                    </select>
+
+                    <label for="" class="form-control cor">Formato de Entrega</label>
+                    <!--<div class="input-group">-->
+                        <input type="radio" value="teams" name="entrega" id="" class="form-check-input">Tarefa no Teams
+                        <input type="radio" value="Chat" name="entrega" id="" class="form-check-input">Chat no Teams
+                        <input type="radio" value="Formulario" name="entrega" id="" class="form-check-input">Forms
+                        <input type="radio" value="email" name="entrga" id="" class="form-check-input">email
+                        <input type="radio" value="Apresentacao" name="entrega" id="" class="form-check-input">Apresentação
+                        <label for="" class="form-control txt">Orientações</label>
+                        <textarea name="orientacoes" id="" cols="30" rows="10" class="form-control"></textarea>
+                    <!--/div-->
+
                     <input type="submit" value="Gravar" class="form-control btn botao">
 
                 </form>

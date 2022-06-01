@@ -6,7 +6,8 @@ const modelo = mongoose.Schema({
     entrega: String,
     disciplina: String,
     instrucoes: String,
-    usuario: String
+    usuario: String,
+    titulo:String
 })
 
 const atividades = mongoose.model('atividades', modelo)

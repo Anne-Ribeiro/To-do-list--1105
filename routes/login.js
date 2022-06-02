@@ -22,6 +22,9 @@ module.exports = (app)=>{
         if(!comparar){
             return res.send("Senha Inválida")
         }
-        res.render("atividades.ejs",{nome:verificar.nome,id:verificar._id})
+        //buscar as atividades do usuário
+        const atividades = require("../models/atividades")
+        var buscar = await atividades.find({usuario:verificar._id})
+        res.render("atividades.ejs",{nome:verificar.nome,id:verificar._id,lista:buscar})
     })
 }

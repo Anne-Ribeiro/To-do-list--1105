@@ -28,3 +28,28 @@ input,i{
 textarea{
     resize: none;
 }
+
+.cor1{
+    background-color: #6f93b6;
+    color: white;
+    font-weight: bold;
+}
+.cor2{
+    background-color: #627e99;
+    color: white;
+    font-weight: bold;
+}
+.cor3{
+    background-color: #455b72;
+    color: white;
+    font-weight: bold;
+}
+
+.fundao{
+    background-color: #b0c1df;
+    color:#324d66;
+    font-weight: bold;
+}
+.fundinho{
+    background-color: #e5ebf5;
+}

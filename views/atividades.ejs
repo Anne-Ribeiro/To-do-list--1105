@@ -60,24 +60,25 @@
                 <h3 class="text-center">Listar</h3>
 
                 <!-- Listagem das atividades do usuário -->
+                <% for(var n=0; n<lista.length; n++){%>
                 <div class="card">
-                    <div class="card-header">Data: <%=lista[0].data%> </div>
-                    <div class="card-body">
-                        <div class="card-title">Titulo</div>
-                        <div class="card-subtitle">Entrega</div>
-                        <div class="card-subtitle">Disciplina</div>
-                        <div class="card-subtitle">Tipo</div>
-                        <div class="card-text">Instruções</div>
+                    <div class="card-header fundao">Data: <%=lista[n].data%> </div>
+                    <div class="card-body fundinho">
+                        <div class="card-title">Titulo:<%=lista[n].titulo%></div>
+                        <div class="card-subtitle">Entrega:<%=lista[n].entrega%></div>
+                        <div class="card-subtitle">Disciplina:<%=lista[n].disciplina%></div>
+                        <div class="card-subtitle">Tipo:<%=lista[n].tipo%></div>
+                        <div class="card-text">Instruções:<%=lista[n].instrucoes%></div>
 
                     </div>
                     <div class="card-footer">
                         <div class="input-group">
-                            <a href="#" class="btn btn-success">Entregue</a>
-                            <a href="#" class="btn btn-warning">Alterar</a>
-                            <a href="#" class="btn btn-danger">Excluir</a>
+                            <a href="#" class="btn cor1">Entregue</a>
+                            <a href="#" class="btn cor2">Alterar</a>
+                            <a href="#" class="btn cor3">Excluir</a>
                         </div>
                     </div>
-                </div>
+                </div><%}%>
 
             </div>
         </div>

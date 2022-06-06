@@ -23,8 +23,11 @@ module.exports = (app)=>{
             return res.send("Senha Inválida")
         }
         //buscar as atividades do usuário
-        const atividades = require("../models/atividades")
-        var buscar = await atividades.find({usuario:verificar._id})
-        res.render("atividades.ejs",{nome:verificar.nome,id:verificar._id,lista:buscar})
+        //const atividades = require("../models/atividades")
+        //var buscar = await atividades.find({usuario:verificar._id})
+
+        //redirecionar a rota atividades(precisa enviar o id)
+        res.redirect('/atividades?id='+ verificar._id)
+        //res.render("atividades.ejs",{nome:verificar.nome,id:verificar._id,lista:buscar})
     })
 }

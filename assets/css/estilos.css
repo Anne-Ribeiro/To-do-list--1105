@@ -53,3 +53,11 @@ textarea{
 .fundinho{
     background-color: #e5ebf5;
 }
+.logoff{
+    position:fixed;
+    right: 0; 
+    cursor: pointer;
+    margin-right: 20px;
+    margin-top: 10px;
+    font-size: 24px;
+}

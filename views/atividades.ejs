@@ -66,7 +66,7 @@
                 <!-- Listagem das atividades do usuário -->
                 <% for(var n=0; n<lista.length; n++){%>
                 <div class="card">
-                    <div class="card-header fundao">Data: <%=lista[n].data%> </div>
+                    <div class="card-header fundao">Data: <%=lista[n].data.getDate()+1%>.<%=lista[n].data.getMonth()+1%>.<%=lista[n].data.getFullYear()%> </div> 
                     <div class="card-body fundinho">
                         <div class="card-title">Titulo:<%=lista[n].titulo%></div>
                         <div class="card-subtitle">Entrega:<%=lista[n].entrega%></div>

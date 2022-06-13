@@ -18,7 +18,7 @@
         <h1 class="text-center">Lista de Atividades</h1>
         <h2 class="text-center">Olá,<%=nome%>!</h2>
         <div class="row">
-            <div class="col-sm">
+            <div class="col-sm order-2">
                 <h3 class="text-center">Cadastrar</h3>
                 <form action="/atividades" method="POST" class="form-control" id="fundo">
                     <input type="hidden" name="id" value="<%=id%>">
@@ -60,7 +60,7 @@
 
                 </form>
             </div>
-            <div class="col-md">
+            <div class="col-md order-1">
                 <h3 class="text-center">Listar</h3>
 
                 <!-- Listagem das atividades do usuário -->
@@ -73,11 +73,12 @@
                         <div class="card-subtitle">Disciplina:<%=lista[n].disciplina%></div>
                         <div class="card-subtitle">Tipo:<%=lista[n].tipo%></div>
                         <div class="card-text">Instruções:<%=lista[n].instrucoes%></div>
+                        <div class="card-text">Status:<%=lista[n].status%></div>
 
                     </div>
                     <div class="card-footer">
                         <div class="input-group">
-                            <a href="#" class="btn cor1">Entregue</a>
+                            <a href="/entregue?id=<%=lista[n]._id%>" class="btn cor1">Entregue</a>
                             <a href="#" class="btn cor2">Alterar</a>
                             <a href="/excluir?id=<%=lista[n]._id%>" class="btn cor3">Excluir</a>
                         </div>

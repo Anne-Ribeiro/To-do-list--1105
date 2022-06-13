@@ -35,19 +35,38 @@ module.exports = (app) =>{
         var atividades = require('../models/atividades')
 
         var dadosUser = await usuarios.findOne({_id:user})
-        var dadosAtividades = await atividades.find({usuario:user})
+        var dadosAberto= await atividades.find({usuario:user, status:"0"})
 
-        res.render('atividades.ejs',{nome:dadosUser.nome, id:dadosUser._id, lista: dadosAtividades})
+        var dadosEntregue= await atividades.find({usuario:user, status:"1"})
+
+        var dadosExcluído= await atividades.find({usuario:user, status:"2"})
+
+        res.render('accordion.ejs',{nome:dadosUser.nome, id:dadosUser._id, dadosAberto, dadosEntregue, dadosExcluído})
+        //res.render('atividades.ejs',{nome:dadosUser.nome, id:dadosUser._id, lista: dadosAtividades})
     })
 
     app.get('/excluir', async(req,res)=>{
         //qual documento será excluído da collection atividades???
         var doc = req.query.id
         //excluir o documento
-        var excluir = await atividades.findOneAndDelete({
-            _id:doc
-        })
+        var excluir = await atividades.findOneAndUpdate(
+            {_id:doc},
+            {status:"2"}
+            )
         //voltar para a lista de atividades
        res.redirect('/atividades?id='+excluir.usuario)
     })
-}
+
+    //rota entregue
+    app.get('/entregue', async(req,res)=>{
+        //qual documento será excluído da collection atividades???
+        var doc = req.query.id
+        //excluir o documento
+        var entregue = await atividades.findOneAndUpdate(
+            {_id:doc},
+            {status:"1"}
+            )
+        //voltar para a lista de atividades
+       res.redirect('/atividades?id='+entregue.usuario)
+    })
+}          

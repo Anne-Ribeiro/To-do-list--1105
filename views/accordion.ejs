@@ -4,13 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <title>bootstrap - Accordion</title>
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 </head>
 <body>
-    
     
     <div class="accordion" id="accordionExample">
         <div class="accordion-item">
@@ -21,29 +19,31 @@
           </h2>
           <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
             <div class="accordion-body">
+
+
               <strong>
-                <% for(var n=0; n<dadosAberto; n++){%>
+                <% for(var n=0; n<dadosAberto.length; n++){%>
                     <div class="card">
-                        <div class="card-header fundao">Data: <%=lista[n].data.getDate()+1%>.<%=lista[n].data.getMonth()+1%>.<%=lista[n].data.getFullYear()%> </div> 
+                        <div class="card-header fundao">Data: <%=dadosAberto[n].data.getDate()+1%>.<%=dadosAberto[n].data.getMonth()+1%>.<%=dadosAberto[n].data.getFullYear()%> </div> 
                         <div class="card-body fundinho">
-                            <div class="card-title">Titulo:<%=lista[n].titulo%></div>
-                            <div class="card-subtitle">Entrega:<%=lista[n].entrega%></div>
-                            <div class="card-subtitle">Disciplina:<%=lista[n].disciplina%></div>
-                            <div class="card-subtitle">Tipo:<%=lista[n].tipo%></div>
-                            <div class="card-text">Instruções:<%=lista[n].instrucoes%></div>
-                            <div class="card-text">Status:<%=lista[n].status%></div>
+                            <div class="card-title">Titulo:<%=dadosAberto[n].titulo%></div>
+                            <div class="card-subtitle">Entrega:<%=dadosAberto[n].entrega%></div>
+                            <div class="card-subtitle">Disciplina:<%=dadosAberto[n].disciplina%></div>
+                            <div class="card-subtitle">Tipo:<%=dadosAberto[n].tipo%></div>
+                            <div class="card-text">Instruções:<%=dadosAberto[n].instrucoes%></div>
+                            <div class="card-text">Status:<%=dadosAberto[n].status%></div>
     
                         </div>
                         <div class="card-footer">
                             <div class="input-group">
-                                <a href="/entregue?id=<%=lista[n]._id%>" class="btn cor1">Entregue</a>
+                                <a href="/entregue?id=<%=dadosAberto[n]._id%>" class="btn cor1">Entregue</a>
                                 <a href="#" class="btn cor2">Alterar</a>
-                                <a href="/excluir?id=<%=lista[n]._id%>" class="btn cor3">Excluir</a>
+                                <a href="/excluir?id=<%=dadosAberto[n]._id%>" class="btn cor3">Excluir</a>
                             </div>
                         </div>
                     </div><%}%>
-    
-              </strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                </strong>
+
             </div>
           </div>
         </div>
@@ -55,7 +55,31 @@
           </h2>
           <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
             <div class="accordion-body">
-              <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+
+
+              <strong>
+                <% for(var n=0; n<dadosEntregue.length; n++){%>
+                  <div class="card">
+                      <div class="card-header fundao">Data: <%=dadosEntregue[n].data.getDate()+1%>.<%=dadosEntregue[n].data.getMonth()+1%>.<%=dadosEntregue[n].data.getFullYear()%> </div> 
+                      <div class="card-body fundinho">
+                          <div class="card-title">Titulo:<%=dadosEntregue[n].titulo%></div>
+                          <div class="card-subtitle">Entrega:<%=dadosEntregue[n].entrega%></div>
+                          <div class="card-subtitle">Disciplina:<%=dadosEntregue[n].disciplina%></div>
+                          <div class="card-subtitle">Tipo:<%=dadosEntregue[n].tipo%></div>
+                          <div class="card-text">Instruções:<%=dadosEntregue[n].instrucoes%></div>
+                          <div class="card-text">Status:<%=dadosEntregue[n].status%></div>
+  
+                      </div>
+                      <div class="card-footer">
+                          <div class="input-group">
+                              <a href="/entregue?id=<%=dadosEntregue[n]._id%>" class="btn cor1">Entregue</a>
+                              <a href="#" class="btn cor2">Alterar</a>
+                              <a href="/excluir?id=<%=dadosEntregue[n]._id%>" class="btn cor3">Excluir</a>
+                          </div>
+                      </div>
+                  </div><%}%>
+              </strong>
+
             </div>
           </div>
         </div>
@@ -67,7 +91,31 @@
           </h2>
           <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
             <div class="accordion-body">
-              <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+
+              <strong>
+                <% for(var n=0; n<dadosExcluido.length; n++){%>
+                  <div class="card">
+                      <div class="card-header fundao">Data: <%=dadosx[n].data.getDate()+1%>.<%=dadosx[n].data.getMonth()+1%>.<%=dadosx[n].data.getFullYear()%> </div> 
+                      <div class="card-body fundinho">
+                          <div class="card-title">Titulo:<%=dadosExcluido[n].titulo%></div>
+                          <div class="card-subtitle">Entrega:<%=dadosExcluido[n].entrega%></div>
+                          <div class="card-subtitle">Disciplina:<%=dadosExcluido[n].disciplina%></div>
+                          <div class="card-subtitle">Tipo:<%=dadosExcluido[n].tipo%></div>
+                          <div class="card-text">Instruções:<%=dadosExcluido[n].instrucoes%></div>
+                          <div class="card-text">Status:<%=dadosExcluido[n].status%></div>
+  
+                      </div>
+                      <div class="card-footer">
+                          <div class="input-group">
+                              <a href="/entregue?id=<%=dadosx[n]._id%>" class="btn cor1">Entregue</a>
+                              <a href="#" class="btn cor2">Alterar</a>
+                              <a href="/excluir?id=<%=dadosx[n]._id%>" class="btn cor3">Excluir</a>
+                          </div>
+                      </div>
+                  </div><%}%>
+              </strong>
+
+              
             </div>
           </div>
         </div>

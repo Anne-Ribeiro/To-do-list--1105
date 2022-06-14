@@ -1,4 +1,4 @@
-const { app } = require("../config/servidor")
+//const { app } = require("../config/servidor")
 
 module.exports = (app)=>{
     //rota do tipo render

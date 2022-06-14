@@ -69,4 +69,19 @@ module.exports = (app) =>{
         //voltar para a lista de atividades
        res.redirect('/atividades?id='+entregue.usuario)
     })
+
+    //rota entregue
+    app.get('/desfazer',async(req,res)=>{
+        //qual documento será excluido na collection atividades???
+        var doc = req.query.id
+
+        //excluir o documento
+        var desfazer = await atividades.findOneAndUpdate(
+            {_id:doc},
+            {status:"0"})
+
+    //voltar para a lista de atividades
+    res.redirect('/atividades?id='+desfazer.usuario)
+    
+    })
 }          

@@ -39,9 +39,9 @@ module.exports = (app) =>{
 
         var dadosEntregue= await atividades.find({usuario:user, status:"1"})
 
-        var dadosExcluído= await atividades.find({usuario:user, status:"2"})
+        var dadosExcluido= await atividades.find({usuario:user, status:"2"})
 
-        res.render('accordion.ejs',{nome:dadosUser.nome, id:dadosUser._id, dadosAberto, dadosEntregue, dadosExcluído})
+        res.render('atividades.ejs',{nome:dadosUser.nome, id:dadosUser._id, dadosAberto, dadosEntregue, dadosExcluido})
         //res.render('atividades.ejs',{nome:dadosUser.nome, id:dadosUser._id, lista: dadosAtividades})
     })
 
@@ -72,7 +72,7 @@ module.exports = (app) =>{
 
     //rota entregue
     app.get('/desfazer',async(req,res)=>{
-        //qual documento será excluido na collection atividades???
+        //qual documento será devolvido na collection atividades???
         var doc = req.query.id
 
         //excluir o documento

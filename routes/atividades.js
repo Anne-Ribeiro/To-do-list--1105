@@ -29,7 +29,7 @@ module.exports = (app) =>{
     app.get('/atividades', async(req,res)=>{
         //listar todas as atividades do usuário logado
         var user = req.query.id
-        if(!user){//se o usuario for = a fslso, então, voltar para a pagina de login
+        if(!user){//se o usuario for = a falso, então, voltar para a pagina de login
             res.redirect("/login")
         }
         var usuarios  = require('../models/usuarios')
